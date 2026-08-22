@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = () => {
+const Home = ({username, roomId, setUsername, setRoomId}) => {
 
     const werewolfTitle = "Welcome to Werewolf FS"
     const werewolfDescription = "Werewolf is a popular social deduction party game where Werewolves kill Villagers one-by-one at night while Villagers try to deduce who are the Werewolves."
