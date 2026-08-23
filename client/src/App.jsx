@@ -1,18 +1,24 @@
-import React from 'react'
-import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useState, useMemo } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home'
+import Room from './pages/Room'
 
 const App = () => {
-
     const [username, setUsername] = useState('')
     const [roomId, setRoomId] = useState('')
 
-    return (
-        <Routes>
-            <Route path="/" element={<Home username={username} roomId={roomId} setUsername={setUsername} setRoomId={setRoomId} />} />
-        </Routes>
-    )
+    const router = useMemo(() => createBrowserRouter([
+        {
+            path: "/",
+            element: <Home username={username} roomId={roomId} setUsername={setUsername} setRoomId={setRoomId} />
+        },
+        {
+            path: "/room",
+            element: <Room />
+        }
+    ]), [username, roomId])
+
+    return <RouterProvider router={router} />
 }
 
 export default App
