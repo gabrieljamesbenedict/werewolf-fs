@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-const Room = () => {
+const Room = ({ username }) => {
 
     const { roomId } = useParams()
 

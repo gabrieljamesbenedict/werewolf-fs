@@ -14,7 +14,7 @@ const App = () => {
         },
         {
             path: "/room/:roomId",
-            element: <Room />
+            element: <Room username={username} />
         }
     ]), [username, roomId])
 
