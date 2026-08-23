@@ -13,7 +13,7 @@ const App = () => {
             element: <Home username={username} roomId={roomId} setUsername={setUsername} setRoomId={setRoomId} />
         },
         {
-            path: "/room/:id",
+            path: "/room/:roomId",
             element: <Room />
         }
     ]), [username, roomId])
