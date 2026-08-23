@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Home from './pages/Home'
 
-const Router = () => {
+const App = () => {
 
     const [page, setPage] = useState('home')
     const [username, setUsername] = useState('')
@@ -13,4 +13,4 @@ const Router = () => {
     )
 }
 
-export default Router
+export default App
