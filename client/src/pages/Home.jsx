@@ -1,4 +1,4 @@
-import React from 'react'
+import "../styles/Home.css"
 
 const Home = ({username, roomId, setUsername, setRoomId}) => {
 
@@ -6,17 +6,19 @@ const Home = ({username, roomId, setUsername, setRoomId}) => {
     const werewolfDescription = "Werewolf is a popular social deduction party game where Werewolves kill Villagers one-by-one at night while Villagers try to deduce who are the Werewolves."
 
     return (
-        <div style={{padding: 16}}>
-            <h1>{werewolfTitle}</h1>
-            <p>{werewolfDescription}</p>
-            <br />
-            <label htmlFor="">Username: </label>
-            <input type="text" />
-            <br />
-            <label htmlFor="">Room ID: </label>
-            <input type="text" />
-            <br />
-            <button>Enter Game</button>
+        <div class="container">
+            <h1 class="container__title">{werewolfTitle}</h1>
+            <p class="container__description">{werewolfDescription}</p>
+
+            <div class="container__form">
+                <label class="container__label">Username: </label>
+                <input class="container__input" type="text" />
+                <br />
+                <label class="container__label">Room ID: </label>
+                <input class="container__input" type="text" />
+                <br />
+                <button class="container__but">Enter Game</button>
+            </div>
         </div>
     )
 }
