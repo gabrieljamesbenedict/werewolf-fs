@@ -22,7 +22,31 @@ fastify.ready(
             'connection',
             (socket) => {
 
-                console.log(`Socket ${socket.id} has connected`)
+                socket.data.username = socket.handshake.auth.username
+
+                socket.on(
+                    'join_room',
+                    (roomId) => {
+                        socket.data.roomId = roomId
+                        socket.join(roomId)
+                        socket.to(roomId).emit(
+                            'player_joins',
+                            socket.data.username
+                        )
+                    }
+                )
+
+                socket.on(
+                    'disconnect',
+                    (error) => {
+                        const username = socket.data.username
+                        const roomId = socket.data.roomId
+                        socket.to(roomId).emit(
+                            'player_leaves',
+                            username
+                        )
+                    }
+                )
 
             }
         )
