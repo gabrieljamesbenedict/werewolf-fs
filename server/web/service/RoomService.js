@@ -1,17 +1,17 @@
 import * as RoomRepository from '../repository/RoomRepository.js'
 
 export const getRoom = (roomId) => {
-    return RoomRepository.findById(roomId)
+    return RoomRepository.findRoomById(roomId)
 }
 
 export const getAllRooms = () => {
     return RoomRepository.findAllRooms()
 }
 
-export const createRoom = (roomId, room) => {
-    return RoomRepository.save(roomId)
+export const createRoom = (roomId) => {
+    return RoomRepository.createRoom(roomId)
 }
 
-export const updateRoom = (roomId) => {
-    return RoomRepository.save(roomId)
+export const updateRoom = (roomId, room) => {
+    return RoomRepository.saveRoom(roomId, room)
 }
