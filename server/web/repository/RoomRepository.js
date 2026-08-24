@@ -34,9 +34,11 @@ export const createRoom = () => {
     return room
 }
 
-export const saveRoom = (roomId, room) => {
-    rooms.set(roomId, room)
-    return room
+export const saveRoom = (roomId, body) => {
+    const room = rooms.get(id)
+    const updatedRoom = { ...room, ...body}
+    rooms.set(roomId, updatedRoom)
+    return updatedRoom
 }
 
 export const deleteRoom = (roomId) => {

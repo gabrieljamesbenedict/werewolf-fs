@@ -17,7 +17,8 @@ export default async function RoomController(fastify, options) {
     })
 
     fastify.patch(`${roomPath}/:id`, async (request, response) => {
-        const { id, body } = request.params
+        const { id } = request.params
+        const { body } = request
         return RoomService.updateRoom(id, body)
     })
 
