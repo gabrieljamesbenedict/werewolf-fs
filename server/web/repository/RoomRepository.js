@@ -17,8 +17,6 @@ const generateID = (existingData = []) => {
     return id
 }
 
-
-
 export const findRoomById = (roomId) => {
     return rooms.get(roomId)
 }
