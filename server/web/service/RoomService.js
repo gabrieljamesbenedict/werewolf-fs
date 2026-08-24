@@ -15,3 +15,7 @@ export const createRoom = (roomId) => {
 export const updateRoom = (roomId, room) => {
     return RoomRepository.saveRoom(roomId, room)
 }
+
+export const deleteRoom = (roomId) {
+    return RoomRepository.deleteRoom(roomId)
+}
