@@ -3,12 +3,17 @@ import { RoomModel } from '../model/RoomModel.js'
 
 const rooms = new Map()
 
-const generateID = (existingIds = []) => {
+const generateID = (existingData = []) => { 
+    const ids = Array.isArray(existingData) 
+        ? existingData.map(item => item.roomId || item) 
+        : Object.keys(existingData || {})
+
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     let id
     do {
         id = Array.from({ length: 6 }, () => chars[Math.floor(Math.random() * chars.length)]).join('')
-    } while (existingIds.includes(id))
+    } while (ids.includes(id))
+    
     return id
 }
 
