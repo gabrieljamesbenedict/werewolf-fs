@@ -1,5 +1,5 @@
 import crypto from 'crypto'
-import { RoomModel } from '../model/RoomModel'
+import { RoomModel } from '../model/RoomModel.js'
 
 const rooms = new Map()
 
