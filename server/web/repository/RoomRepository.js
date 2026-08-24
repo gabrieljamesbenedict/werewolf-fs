@@ -1,5 +1,5 @@
 import crypto from 'crypto'
-import { createRoomModel } from '../model/RoomModel'
+import { RoomModel } from '../model/RoomModel'
 
 const rooms = new Map()
 
@@ -24,7 +24,7 @@ export const findAllRooms = () => {
 
 export const createRoom = () => {
     const generatedRoomId = generateID(rooms.keys)
-    const room = createRoomModel(generatedRoomId)
+    const room = RoomModel(generatedRoomId)
     rooms.set(generatedRoomId, room)
     return room
 }

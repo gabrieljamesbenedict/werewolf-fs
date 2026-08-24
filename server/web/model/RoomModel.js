@@ -1,4 +1,4 @@
-export const createRoomModel = (roomId) => {
+export const RoomModel = (roomId) => {
     return {
         roomId: roomId,
         playerList: [],
