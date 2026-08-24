@@ -35,7 +35,7 @@ export const createRoom = () => {
 }
 
 export const saveRoom = (roomId, body) => {
-    const room = rooms.get(id)
+    const room = rooms.get(roomId)
     const updatedRoom = { ...room, ...body}
     rooms.set(roomId, updatedRoom)
     return updatedRoom
