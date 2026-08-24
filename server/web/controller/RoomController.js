@@ -1,23 +1,29 @@
+import * as RoomService from '../service/RoomService.js'
+
 export default async function RoomController(fastify, options) {
     const roomPath = '/room'
 
     fastify.get(`${roomPath}`, async (request, response) => {
-        return { hello: 'all world' }
+        return RoomService.getAllRoom()
     })
 
     fastify.get(`${roomPath}/:id`, async (request, response) => {
-        return { hello: 'world' }
+        const { id } = request.params
+        return RoomService.getRoom(id)
     })
 
     fastify.post(`${roomPath}`, async (request, response) => {
-        return request.body
+        const { body } = request.params
+        return RoomService.createRoom(body)
     })
 
     fastify.patch(`${roomPath}/:id`, async (request, response) => {
-        return { updated: true }
+        const { id, body } = request.params
+        return RoomService.updateRoom(id, body)
     })
 
     fastify.delete(`${roomPath}/:id`, async (request, response) => {
-        return { success: true }
+        const { id } = request.params
+        return RoomService.deleteRoom(id)
     })
 }
