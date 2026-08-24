@@ -13,8 +13,7 @@ export default async function RoomController(fastify, options) {
     })
 
     fastify.post(`${roomPath}`, async (request, response) => {
-        const { body } = request.params
-        return RoomService.createRoom(body)
+        return RoomService.createRoom()
     })
 
     fastify.patch(`${roomPath}/:id`, async (request, response) => {

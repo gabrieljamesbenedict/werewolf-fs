@@ -8,8 +8,8 @@ export const getAllRooms = () => {
     return RoomRepository.findAllRooms()
 }
 
-export const createRoom = (roomId) => {
-    return RoomRepository.createRoom(roomId)
+export const createRoom = () => {
+    return RoomRepository.createRoom()
 }
 
 export const updateRoom = (roomId, room) => {
