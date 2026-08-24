@@ -1,4 +1,5 @@
 import crypto from 'crypto'
+import { createRoomModel } from '../model/RoomModel'
 
 const rooms = new Map()
 
@@ -23,7 +24,7 @@ export const findAllRooms = () => {
 
 export const createRoom = () => {
     const generatedRoomId = generateID(rooms.keys)
-    const room = { generatedRoomId, playerList: [] }
+    const room = createRoomModel(generatedRoomId)
     rooms.set(generatedRoomId, room)
     return room
 }
