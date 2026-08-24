@@ -4,7 +4,7 @@ export default async function RoomController(fastify, options) {
     const roomPath = '/room'
 
     fastify.get(`${roomPath}`, async (request, response) => {
-        return RoomService.getAllRoom()
+        return RoomService.getAllRooms()
     })
 
     fastify.get(`${roomPath}/:id`, async (request, response) => {
