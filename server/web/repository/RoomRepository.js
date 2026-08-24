@@ -24,7 +24,7 @@ export const findRoomById = (roomId) => {
 }
 
 export const findAllRooms = () => {
-    return rooms
+    return Array.from(rooms.values())
 }
 
 export const createRoom = () => {
